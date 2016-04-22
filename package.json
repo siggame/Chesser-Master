@@ -1,0 +1,27 @@
+{
+  "name": "Chesser-Master",
+  "version": "1.0.0",
+  "description": "A master server that acts as the coordinator for humans playing Chess via Chesser to compete in tournaments",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/siggame/Chesser-Master"
+  },
+  "private": true,
+  "dependencies": {
+    "argparse": "1.0.6",
+    "clone": "1.0.2",
+    "colors": "1.1.2",
+    "express": "4.13.4",
+    "express-handlebars": "3.0.0",
+    "extend": "3.0.0",
+    "string-format": "0.5.0",
+    "ws": "1.1.0"
+  },
+  "engines": {
+    "node": "4.3.1"
+  },
+  "scripts": [
+    "node main.js"
+  ],
+  "license": "MIT"
+}
