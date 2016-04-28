@@ -61,9 +61,14 @@ Server.prototype.bridge = function(chesserClient, arenaClient) {
 };
 
 Server.prototype.clientDisconnected = function(client) {
-    delete this.unregistredClients[client.id];
-    delete this.chesserClients[client.name];
-    delete this.arenaClients[client.name];
+    var lists = ["unregistredClients", "chesserClients", "arenaClients"];
+    for(var i = 0; i < lists.length; i++) {
+        var key = lists[i];
+        var list = this[key];
+        if(list[client.name] === client) {
+            delete list[client.name];
+        }
+    }
 
     console.log(String(client) + " disconnected ")
 };

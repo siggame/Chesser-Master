@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="refresh" content="5" >
+		<title>Chesser Master</title>
+		<style type="text/css">
+		/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {	margin: 0;  padding: 0; border: 0;  font-size: 100%;	font: inherit;  vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {	display: block;}body {  line-height: 1;}ol, ul {	list-style: none;}blockquote, q {   quotes: none;}blockquote:before, blockquote:after,q:before, q:after {   content: '';	content: none;}table {  border-collapse: collapse;  border-spacing: 0;}
+
+		html, body {
+			background-color: #a3bbed;
+			font-family: sans-serif;
+		}
+
+		#main {
+			display: block;
+			width: 600px;
+			margin: 0 auto;
+			background: #dadada;
+			padding: 1em;
+			border-radius: 0.5em;
+			margin-top: 1em;
+			border: 0.125em solid #222267;
+		}
+
+		#main h1 {
+			font-weight: bold;
+			font-size: 2em;
+			color: #222267;
+			margin-bottom: 0.333em;
+			display: block;
+			text-align: center;
+		}
+
+		#subtitle {
+			color: #232323;
+			display: block;
+			text-align: center;
+		}
+
+		#main header {
+			font-size: 1.5em;
+			margin: 1em 0 0.5em 0;
+			font-weight: bold;
+		}
+
+		em {
+			font-style: italic;
+			color: #222267;
+		}
+
+		ul {
+			list-style-type: square;
+		}
+
+		ul > li {
+			margin-left: 2em;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<h1>Chesser Master</h1>
+			<p id="subtitle">The following clients are connected.</p>
+			{{#each clientTypes}}
+			<section>
+				<header>{{type}}</header>
+				{{#if clients}}
+				<ul>
+				{{#each clients}}
+					<li>{{this}}</li>
+				{{/each}}
+				</ul>
+				{{else}}
+				<em>None</em>
+				{{/if}}
+			</section>
+			{{/each}}
+		</div>
+	</body>
+</html
