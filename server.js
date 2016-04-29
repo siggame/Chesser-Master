@@ -58,6 +58,7 @@ Server.prototype.bridge = function(chesserClient, arenaClient) {
 
     // the password is valid, so tell Chesser to play the arena game
     chesserClient.send("play", arenaClient.playData);
+    arenaClient.send("bridged");
 };
 
 Server.prototype.clientDisconnected = function(client) {
