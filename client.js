@@ -8,7 +8,7 @@ function Client(id, ws, server, printIO) {
     var self = this;
     this.ws.onmessage = function(message) {
         if(self.server.printIO) {
-            console.log("To {} <- {}".format(self, message.data));
+            console.log("From {} <- {}".format(self, message.data));
         }
 
         var data;
@@ -30,7 +30,7 @@ function Client(id, ws, server, printIO) {
         console.log("error", err);
         this.disconnect();
     };
-};
+}
 
 var requiredParameters = ["type", "name", "password"];
 Client.prototype.onMessage = function(data) {
@@ -72,7 +72,7 @@ Client.prototype.send = function(eventName, data) {
     });
 
     if(this.server.printIO) {
-        console.log("From {} -> {}".format(this, str));
+        console.log("To {} -> {}".format(this, str));
     }
 
     this.ws.send(str);
