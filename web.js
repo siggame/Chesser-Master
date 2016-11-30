@@ -33,7 +33,7 @@ module.exports = function(wsServer) {
                 clients: [],
             },
             {
-                type: "Chesser",
+                type: "Browser",
                 clients: [],
             },
         ];
@@ -44,9 +44,9 @@ module.exports = function(wsServer) {
             clientTypes[client.bridgedClient ? 0 : 1].clients.push(client.name);
         }
 
-        var chesserClients = [];
-        for(var key in wsServer.chesserClients) {
-            var client = wsServer.chesserClients[key];
+        var humanClients = [];
+        for(var key in wsServer.humanClients) {
+            var client = wsServer.humanClients[key];
 
             if(!client.bridgedClient) {
                 clientTypes[2].clients.push(client.name);
